@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body id="background" onload="setInterval(change, 1000)">
+	<h1>Background Color is being changed every 1 seconds</h1>
+<script>
+var i = 0;
+function change() {
+
+
+  var doc = document.getElementById("background");
+
+  var color = ["red", "blue", "brown", "green","yellow","pink","orange"];
+  doc.style.backgroundColor = color[i];
+  i = i+1;
+  if(i==7){
+  	doc.style.backgroundColor = "white";
+    alert("Page unload")
+  }
+}
+</script>
+</body>
+</html>
