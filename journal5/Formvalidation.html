@@ -1,0 +1,45 @@
+<html>
+<head>
+<title> form valition </title>
+</head>
+<body bgcolor="green">
+<h1 align="center">INFORMATION</h1>
+<form name="frm1">
+Enter Name
+<input type="text" name="t1">
+<br>
+<br>
+Enter Address
+<textarea name="t2" placeholder="PERMENANT ADDRESS">
+</textarea><br>
+Enter Telephone Number
+<input type="tel" name="telephone" maxlenght="10"<br> <br>
+Enter Email Address
+<input type="email" name="t3" pattern="[a-z A-Z]{0-9}-[@]{}1-[.]{1}" placeholder="lax2107@gmail.com"><br><br>
+<input type="button" name="b1" value="Submit" onclick="validate_email()">
+</form>
+</body>
+<script type="text/javascript">
+function validate_email()
+{
+var x=frm1.t3.value;
+var at_pos=x.Indexof("@");
+var last_pos=x.lastIndexof("@");
+var firstdot_pos=x.Indexof(".");
+var dot_pos=x.lastIndexof(".");
+if(at_pos<1 || dot_pos<at_pos+2 || dot_pos+2>=x.length || firstdot_pos<at_pos || at_pos<last_pos)
+{
+alert("NOT VALTD EMAIL");
+frm1.t3.focus();
+}
+else
+{
+alert("EMAIL ACCEPTED");
+return true;
+}
+}
+</script>
+</html>
+
+
+
